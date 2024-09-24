@@ -1,0 +1,355 @@
+/* src/assets/styles/main.css */
+
+/* Page Background and Overall Styling */
+body {
+
+  background-color: #002147;
+  background-size: cover;
+  font-family: 'Nunito', sans-serif; /* Changed to Nunito */
+  font-size: 0.9em;
+  color: white;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Styling for the header text */
+.header {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  top: -1.42em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 100%;
+}
+
+/* Main title (Cap10Consulting) */
+.header h1 {
+  font-family: 'Marck Script', cursive; /* Updated to Marck Script */
+  font-size: 2rem; /* Adjust as needed */
+  color: white;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* General quote styling */
+.quote {
+  font-size: 0.8rem; /* Reduced size */
+  font-style: italic;
+  color: white;
+  margin-top: -1.5rem; /* Add spacing */
+}
+
+/* Smallquote styling */
+.smallquote {
+  font-size: 0.8rem; /* Smaller size for smallquote */
+  font-style: italic;
+  color: #dcdcdc; /* Slightly lighter text color */
+  max-width: 80%; /* Limit width for better readability */
+  margin-left: 10%;
+  text-align: center; /* Center align for better presentation */
+}
+
+/* Waves Section */
+.waves {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin-top: 0;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+  background: linear-gradient(169deg, #00234d 0%, #4b001e 35%, #c27f03 100%);
+  z-index: 5;
+}
+
+.parallax > use {
+  animation: move-forever 505s cubic-bezier(.55, .5, .75, .05) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -1s;
+  animation-duration: 32s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -2s;
+  animation-duration: 24s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -1s;
+  animation-duration: 28s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -3s;
+  animation-duration: 16s;
+}
+
+.parallax > use:nth-child(5) {
+  animation-delay: -1.5s;
+  animation-duration: 35s;
+}
+
+.parallax > use:nth-child(6) {
+  animation-delay: -2.5s;
+  animation-duration: 22s;
+}
+
+.parallax > use:nth-child(7) {
+  animation-delay: -1.8s;
+  animation-duration: 30s;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.2rem;
+  }
+  .quote {
+    font-size: 0.7rem;
+  }
+  .smallquote {
+    font-size: 0.6rem;
+    max-width: 90%;
+    margin-left: 5%;
+  }
+
+  .waves {
+    height: 40px;
+    min-height: 40px;
+    background-size: cover;
+  }
+
+  .services-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .service-card {
+    width: 100%;
+    padding: 1.5rem;
+    min-height: 350px;
+    max-width: none;
+    margin: 0.5rem 0;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-card-pricing {
+    font-size: 1rem;
+  }
+
+  .popup {
+    width: 90%;
+    max-width: 600px;
+    padding: 1.5rem;
+  }
+
+  .popup h2, .popup h4 {
+    font-size: 1rem;
+  }
+}
+
+/* Services Page Styling */
+.services-page-container {
+  padding-top: 10rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.services-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  padding: .5rem;
+}
+
+/* Service Card Styling */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid white;
+  background: #002147;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin: 1rem;
+  flex: 1;
+  min-height: 300px;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.service-card h3 {
+  font-family: "Nunito", sans-serif; /* Nunito for service card titles */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.service-card p {
+  color: #e1e1e1;
+}
+
+.service-card:hover {
+  transform: scale(1.07);
+  border-width: 10px;
+  cursor: pointer;
+}
+
+.pricing {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.service-card-content {
+  flex-grow: 1;
+}
+
+.service-card-pricing {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Modal Styling */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: rgba(0, 35, 80, 0.85);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 75%;
+  max-width: 800px;
+  z-index: 1100;
+}
+
+.popup h2, .popup h4 {
+  color: #ffffff;
+}
+
+.popup ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.popup button {
+  background: #0215a6;
+  color: white;
+  border-radius: 8px;
+  border-width: 2px;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background: #774304;
+  cursor: pointer;
+}
+
+/* Popup Buttons Styling */
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Adds space between the buttons */
+  margin-top: 1.5rem;
+}
+
+.popup-buttons button, .popup-buttons .calendly-link {
+  background: #0215a6;
+  color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+  text-align: center;
+}
+
+.popup-buttons button:hover, .popup-buttons .calendly-link:hover {
+  background: #774304;
+}
+
+.calendly-link {
+  display: inline-block;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -20%);
+  }
+}
+
+/* Container to hold the cards */
+.services-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.service-card-content {
+  flex-grow: 1;
+}
+
+.service-card-pricing {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #f2eca7;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
